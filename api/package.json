@@ -1,0 +1,24 @@
+{
+  "name": "sh_be",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "csvtojson": "^1.1.5",
+    "express": "^4.15.2",
+    "file-system": "^2.2.2",
+    "jsonwebtoken": "^7.4.1",
+    "mongoose": "^4.9.8",
+    "sha256": "^0.2.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.11.0"
+  }
+}
