@@ -1,19 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <!-- Theme Made By www.w3schools.com - No Copyright -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-</head>
-<body>
+<nav class="navbar navbar-toggleable-md navbar-inverse navbar-sh fixed-top">
+  <a class="navbar-brand brand-sh" href="#">StudentHack</a>
+  <ul class="nav navbar-nav mr-auto">
+    <li class="nav-item active">
+      <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">About</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Contact</a>
+    </li>
+  </ul>
+  <ul class="nav navbar-nav navbar-right">
+    <li class="nav-item">
+      <a class="lgn" routerLink="/register" routerLinkActive="active"><b>Register</b> <span class="caret"></span></a>
+  </ul>
+</nav>
 
-<div class="jumbotron text-center">
-  <h1>Student Hack</h1> 
-  <p>We specialize in blablabla</p> 
-</div>
+<router-outlet></router-outlet>
 
-</body>
-</html>

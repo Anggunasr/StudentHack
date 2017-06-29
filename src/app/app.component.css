@@ -1,4 +1,18 @@
-.jumbotron {
-      background-color: #f4511e;
-      color: #fff;
-  }
+.lgn{
+	color: white;
+	text-decoration: none;
+}
+
+.lgn:hover{
+	color: #88d317;
+	text-decoration: none;
+}
+
+.navbar-sh{
+	background-color: #1a0315;
+}
+
+.brand-sh{
+	color:#88d317;
+	text-decoration: bold;
+}
