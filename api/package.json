@@ -10,12 +10,18 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "body-parser": "^1.17.1",
+    "body-parser": "^1.17.2",
+    "csvtojson": "^1.1.7",
+    "express": "^4.15.3",
+    "file-system": "^2.2.2",
+    "jsonwebtoken": "^7.4.1",
+    "mongoose": "^4.11.0",
+    "crypto": "0.0.3",
     "csvtojson": "^1.1.5",
     "express": "^4.15.2",
     "file-system": "^2.2.2",
     "jsonwebtoken": "^7.4.1",
-    "mongoose": "^4.9.8",
+    "mongoose": "^4.10.7",
     "sha256": "^0.2.0"
   },
   "devDependencies": {
