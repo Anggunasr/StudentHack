@@ -1,0 +1,46 @@
+<div class="container ct-lgn">
+  <h2>Register</h2>
+  <form class="form-horizontal" action="/action_page.php">
+    <div class="form-group">
+      <label class="control-label col-sm-10" for="schName"><strong>Nama Sekolah</strong></label>
+      <div class="col-sm-10">
+        <input type="schName" class="form-control" id="schName" placeholder="Masukkan Nama Sekolah" name="schName">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-10" for="schPhone"><strong>Nomor Telepon Sekolah</strong></label>
+      <div class="col-sm-10">
+        <input type="schPhone" class="form-control" id="schPhone" placeholder="Masukkan Nomor Telepon Sekolah" name="schEmail">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-10" for="schEmail"><strong>Email Sekolah</strong></label>
+      <div class="col-sm-10">
+        <input type="schEmail" class="form-control" id="schEmail" placeholder="Masukkan Alamat Sekolah" name="schEmail">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-10" for="schWeb"><strong>Alamat Website Sekolah</strong></label>
+      <div class="col-sm-10">
+        <input type="schWeb" class="form-control" id="schWeb" placeholder="Masukkan Website Sekolah" name="schEmail">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-10" for="schAddr"><strong>Alamat Sekolah</strong></label>
+      <div class="col-sm-10">
+        <input type="schAddr" class="form-control" id="schAddr" placeholder="Masukkan Alamat Sekolah" name="schAddr">
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-sm-offset-2 col-sm-10">
+        <a routerLink="/login" routerLinkActive="active">Sudah memiliki akun? Login</a>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-sm-offset-2 col-sm-10">
+        <button type="submit" class="btn btn-default btn-sh">Register</button>
+      </div>
+    </div>
+  </form>
+
+<router-outlet></router-outlet>
