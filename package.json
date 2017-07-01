@@ -26,16 +26,9 @@
     "body-parser": "^1.17.2",
     "bootstrap": "^4.0.0-alpha.6",
     "core-js": "^2.4.1",
-<<<<<<< HEAD
-=======
     "cors": "^2.8.3",
-    "crypto": "0.0.3",
-    "express": "^4.15.3",
     "font-awesome": "^4.7.0",
-    "jsonwebtoken": "^7.4.1",
-    "mongoose": "^4.11.0",
     "ngx-bootstrap": "^1.7.1",
->>>>>>> home-setup
     "rxjs": "^5.1.0",
     "zone.js": "^0.8.4"
   },
