@@ -6,9 +6,8 @@ function Token(){
 		var token = jwt.sign(data,secret);
 		return token;
 	}
-	
-	this.checkToken = function(data,res){
-		var token = data.body.token || data.query.token || data.headers['authorization'];
+	this.checkToken = function(header,res){
+		var token = header['authorization'];
 		try{
 			var decoded = jwt.verify(token,secret);
 			return decoded;

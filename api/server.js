@@ -2,9 +2,6 @@ var express = require('express');
 var bodyParser = require('body-parser');
 
 var mongoose = require('mongoose');
-var jwt	= require('jsonwebtoken');
-	
-
 
 //set up express app
 var app = express();
@@ -13,17 +10,23 @@ var app = express();
 mongoose.connect('mongodb://localhost/studenthack');
 mongoose.Promise = global.Promise;
 
-app.use(bodyParser.urlencoded({extented:true}));
+app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
-app.use('/api',require('./routes/api'));
+
 
 //user controller
 app.use('/users',require('./routes/user.routes'));
 
-//register dari school regulator
+//admin controller
+app.use('/admin',require('./routes/admin.routes'));
 
+//class controller
+app.use('/class',require('./routes/class.routes'));
+
+//teacher controller
+app.use('/teachers',require('./routes/teacher.routes'));
 
 //listen for request
-app.listen(process.env.port || 4000,function(){
+app.listen(process.env.port || 4200,function(){
 	console.log('now waiting request');
 });

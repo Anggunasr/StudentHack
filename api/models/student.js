@@ -15,10 +15,6 @@ var StudentSchema = new Schema({
 		type: String,
 		default: null
 	},
-	subject:{
-		type: String,
-		default: null
-	},
 	handphone:{
 		type: String,
 		default: null
@@ -34,7 +30,16 @@ var StudentSchema = new Schema({
 	class_id:{
 		type: String,
 		default: null
-	}
+	},
+	score:{
+		type:Number,
+		default:0
+	},
+	sr:{
+		type:String,
+		require:true
+	}//sr that's mean school regulator who created data student 
+
 
 });
 

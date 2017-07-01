@@ -35,11 +35,19 @@ var TeacherSchema = new Schema({
 		type : Date,
 		default: null
 	},
-	class_id:{
+	class:{
 		type: String,
 		default: null
-	}
-
+	},
+	homeroom:{
+		type: String,
+		default: null
+	},
+	sr:{
+		type:String,
+		require:true
+	}//sr that's mean school regulator who created data teacher
+	 
 });
 
 const Teacher = mongoose.model('teachers',TeacherSchema);

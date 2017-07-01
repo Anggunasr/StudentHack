@@ -24,6 +24,8 @@
     "body-parser": "^1.17.2",
     "core-js": "^2.4.1",
     "crypto": "0.0.3",
+    "csvtojson": "^1.1.6",
+    "file-system": "^2.2.2",
     "jsonwebtoken": "^7.4.1",
     "mongoose": "^4.10.4",
     "rxjs": "^5.1.0",
