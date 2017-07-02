@@ -1,15 +1,22 @@
-import { Component, OnInit } 	from '@angular/core';
-import { NgbModule }        	from '@ng-bootstrap/ng-bootstrap';
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
-  selector: 'login',
+  selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
+
 export class LoginComponent implements OnInit {
+  data= {
+  	email:'',
+  	pwd:'',
+  	rePwd:''
+  };
 
-  constructor() { }
-
+  formSubmit(){
+  	console.log(this.data.email);
+  	}
   ngOnInit() {
   }
 
