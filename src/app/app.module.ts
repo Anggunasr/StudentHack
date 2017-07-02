@@ -43,7 +43,7 @@ import { RegisterComponent } from './register/register.component';
   
   providers: [],
   bootstrap: [AppComponent],
-  declarations: [ AppComponent ],
+
 
   
 })
