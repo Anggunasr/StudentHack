@@ -18,7 +18,7 @@ app.use(bodyParser.json());
 
 
 //user controller
-app.use('/users',require('./routes/user.routes'));
+app.use('/user',require('./routes/user.routes'));
 
 //admin controller
 app.use('/admin',require('./routes/admin.routes'));
@@ -27,7 +27,7 @@ app.use('/admin',require('./routes/admin.routes'));
 app.use('/class',require('./routes/class.routes'));
 
 //teacher controller
-app.use('/teachers',require('./routes/teacher.routes'));
+app.use('/teacher',require('./routes/teacher.routes'));
 
 //listen for request
 app.listen(process.env.port || 4200,function(){
