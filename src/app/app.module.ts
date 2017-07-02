@@ -11,8 +11,15 @@ import { BerandaComponent } from './beranda/beranda.component';
 import { TeacherComponent } from './teacher/teacher.component';
 import { StudentComponent } from './student/student.component';
 import { ClassComponent } from './class/class.component';
-import { HomeComponent } from './home/home.component';
 import { RegisterComponent } from './register/register.component';
+import { ParentComponent } from './parent/parent.component';
+import { AdminComponent } from './admin/admin.component';
+import { PostComponent } from './post/post.component';
+
+import { AuthService } from './_services/auth.service';
+import { PostService } from './_services/post.service';
+import { DeadlineComponent } from './deadline/deadline.component';
+import { TaskComponent } from './task/task.component';
 
 @NgModule({
   declarations: [
@@ -22,8 +29,12 @@ import { RegisterComponent } from './register/register.component';
     TeacherComponent,
     StudentComponent,
     ClassComponent,
-    HomeComponent,
-    RegisterComponent
+    RegisterComponent,
+    ParentComponent,
+    AdminComponent,
+    PostComponent,
+    DeadlineComponent,
+    TaskComponent
   ],
   imports: [
     BrowserModule,
@@ -31,15 +42,20 @@ import { RegisterComponent } from './register/register.component';
     HttpModule,
     RouterModule.forRoot([
       { path: 'beranda', component: BerandaComponent },
-      { path: 'login', component: LoginComponent },
-      { path: 'student', component: StudentComponent },
+      { path: 'post', component: PostComponent },
+      { path: 'deadline', component: DeadlineComponent },
+      { path: 'task', component: TaskComponent },
+      { path: 'admin', component:AdminComponent },
       { path: 'teacher', component: TeacherComponent },
+      { path: 'student', component: StudentComponent },
+      { path: 'parent', component: ParentComponent },
       { path: 'class', component: ClassComponent },
-      { path: 'register', component:RegisterComponent },
-      { path: '', component: HomeComponent}
+      { path: 'class', component: ClassComponent },
+      { path: 'login', component: LoginComponent },
+      { path: 'register', component:RegisterComponent }
     ])
   ],
-  providers: [],
+  providers: [ AuthService, PostService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
