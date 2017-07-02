@@ -3,6 +3,7 @@ import { NgModule }         from '@angular/core';
 import { FormsModule }      from '@angular/forms';
 import { HttpModule }       from '@angular/http';
 import { RouterModule }     from '@angular/router';
+import { ClarityModule }    from "clarity-angular";
 
 
 import { AppComponent }     from './app.component';
@@ -39,8 +40,12 @@ import { RegisterComponent } from './register/register.component';
       { path: '', component: HomeComponent}
     ])
   ],
+  
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  declarations: [ AppComponent ],
+
+  
 })
 export class AppModule { }
      
