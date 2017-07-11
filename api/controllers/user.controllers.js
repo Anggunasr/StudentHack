@@ -13,26 +13,6 @@ var converter = new Converter({});
 
 //function User (student,teacher,admin)
 function UserControllers(){
-	//not solved
-	this.registercsv = function(data,res){
-		converter.fromFile("test.csv",function(err,result){
-   			// if an error has occured then handle it
-   		 	if(err){
-   		 		res.status(406).json({message:"something happen, cannot read the csv or anything"});
-       			console.log(err);  
-    		} 
-    	
-    		// create a variable called json and store
-    		// the result of the conversion
-    		var hasil = result;
-   			var count = Object.keys(hasil).length;
-
-   		 	for (i=0;i<count;i++){
-   		 		cobaregister(hasil[i],res);
-   		 	}
-		});
-	}
-
 	this.register = function (data,res){
 		var username = data.body.username;
 		var password = data.body.password;

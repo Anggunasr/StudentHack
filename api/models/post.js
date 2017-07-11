@@ -7,7 +7,7 @@ var PostSchema = new Schema({
 	content:{
 		type: String
 	},
-	maker:{
+	idpembuat:{
 		type: String,
 		required:[true,'need an id']
 	},
@@ -33,11 +33,11 @@ var PostSchema = new Schema({
 		type: Date
 	},
 	like:{
-		type: Integer,
+		type: Number,
 		default:0
 	}
 });
 
-const User = mongoose.model('users',UserSchema);
+const Post = mongoose.model('posts',PostSchema);
 
-module.exports = User;
+module.exports = Post;

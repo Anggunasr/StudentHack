@@ -3,3 +3,6 @@
 
 # Ada Library Information
 *.ali
+
+#ignore node_modules in api
+/api/node_modules/

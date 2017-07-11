@@ -14,6 +14,7 @@ export class DataService{
 	public userdata: any;
 	public id_user: number;
 	public isLoggedIn = new Subject<boolean>();
+	public baseTitle = 'StudentHack XD >< :/';
 
 	public baseUrl = 'http://localhost:4200';
 

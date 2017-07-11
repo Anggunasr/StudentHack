@@ -7,7 +7,6 @@ router.get('/',function(req,res){
 	res.json({status:false,message:"none API implenented"});
 });
 
-
 //register school regulator
 router.post('/register',function(req,res){
 	user.register(req,res);
