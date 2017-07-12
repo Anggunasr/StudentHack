@@ -7,30 +7,29 @@ var PostSchema = new Schema({
 	content:{
 		type: String
 	},
-	idpembuat:{
-		type: String,
-		required:[true,'need an id']
+	username:{
+		type: String
 	},
 	title:{
 		type: String,
 		default:"Title of the post"
 	},
-	comment:{
-		commentid:{
-			type: String
-		},
+	comment:[
+	{
 		commenctcontent:{
 			type: String
 		},
-		idmaker:{
+		username:{
 			type: String
 		},
 		commentdate:{
-			type: Date
+			type: Date,
+			default: Date.now
 		}
-	},
+	}],
 	date:{
-		type: Date
+		type: Date,
+		default: Date.now
 	},
 	like:{
 		type: Number,
