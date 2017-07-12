@@ -34,6 +34,6 @@ app.use('/teacher',require('./routes/teacher.routes'));
 app.use('/post',require('./routes/post.routes'));
 
 //listen for request
-app.listen(process.env.port || 4200,function(){
+app.listen(process.env.port || 4000,function(){
 	console.log('now waiting request');
 });

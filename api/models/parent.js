@@ -29,11 +29,11 @@ var ParentSchema = new Schema({
 	sr:{
 		type:String,
 		require:true
-	}//sr that's mean school regulator who created data student 
+	}//sr that's mean school regulator who created data parent 
 
 
 });
 
-const Student = mongoose.model('students',StudentSchema);
+const Parent = mongoose.model('parents',ParentSchema);
 
-module.exports = Student;
+module.exports = Parent;

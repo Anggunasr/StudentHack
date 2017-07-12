@@ -7,6 +7,7 @@ var Converter = require("csvtojson").Converter;
 var User = require('../models/user');
 var Teacher = require('../models/teacher');
 var Student = require('../models/student');
+var Parent = require('../models/parent');
 
 //extend variable
 var converter = new Converter({});
@@ -24,7 +25,7 @@ function UserControllers(){
 			console.log("ehm")
 			User.create({username:username,password:crypto.createHash('sha256').update(password).digest("hex"),schoolname:schoolname})
 			.then(function(){
-				res.status(200).json({message:"register berhasil, harap menunggu konfirmasi admin"});
+				res.status(200).json({message:"register succes"});
 			})
 			.catch(function(err){
 				res.status(406).json({message:"register failed"});
@@ -41,7 +42,7 @@ function UserControllers(){
 		}
 		if (auth.login_type==3){
 			console.log(req.body)
-			var username = req.body.username;
+			var username = req.body.email;
 			var name = req.body.name;
 			var password = req.body.password;
 			var password_confirm = req.body.password_confirm;
@@ -83,7 +84,7 @@ function UserControllers(){
 			return res.status(406).json({message:"Authitentication Failed, please login"});
 		}
 		if (auth.login_type==3){
-			var username = data.body.username;
+			var username = data.body.email;
 			var name = data.body.name;
 			var password = data.body.password;
 			var password_confirm = data.body.password_confirm;
@@ -99,7 +100,7 @@ function UserControllers(){
 			if (password != password_confirm){
 				res.status(406).json({message:"password tidak sama bos"});
 			}else{
-				User.create({username: username,password:crypto.createHash('sha256').update(password).digest("hex"),status_user:status_user,schoolname:schoolname}).then(function(){
+				User.create({username: username,password:crypto.createHash('sha256').update(password).digest("hex"),login_type:login_type,status_user:status_user,schoolname:schoolname}).then(function(){
 					console.log("Regis User complete");
 					Student.create({username:username,name:name,gender:gender,handphone:handphone,address:address,email:email,sr:sr,class_id:class_id}).then(function(){
 						res.status(200).json({message:"register selesai"});

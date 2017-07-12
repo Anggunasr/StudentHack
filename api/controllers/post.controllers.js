@@ -3,15 +3,32 @@ var jwt = require('../token');
 
 //require models
 var Post = require('../models/post');
+var User = require('../models/user');
+var Student = require('../models/student');
+var Teacher = require('../models/teacher');
+
 
 //function for post
 function PostController(){
 	this.getall = function(req,res){
-		Post.find().then(function(result){
-			res.status(200).json({data:result});
+		Post.find()
+		.then(function(result){	
+			var number  = Object.keys(result).length;
+			for (var i=0;i<number;i++){
+				console.log(i);
+				var temp = result[i];
+				User.findById(temp.id,function(err,hasil){
+					if (err){
+						console.log(err);
+					}else{
+						console.log(hasil);
+					}
+				})
+			}
+			res.status(200).json({result});
 		})
 		.catch(function(err){
-			res.status(406).json({message:err});
+			res.status(406).json({message:"get some error, try again!"});
 		})
 	}
 
@@ -32,6 +49,47 @@ function PostController(){
 				res.status(400).json({message:"failed to increase like :("});
 			})
 		});
+	}
+	this.addcomment = function(req,res){
+		var auth = jwt.checkToken(req.headers,res);
+		if (auth == false){
+			res.status(400).json({message:"Login first!"});
+		}else{
+			var username = auth.username;
+			var idpost = req.body._id;
+			var commentcontent = req.body.commentcontent;
+			Post.findByIdAndUpdate(
+				idpost,
+				{$push:{"comment":{commentcontent:commentcontent,username:username}}},
+				{safe: true, upsert: true, new : true},
+				function(err,post){
+					if (err){
+						console.log(err);
+					}else{
+						res.status(200).json({message:"comment get posted!"});
+					}
+				});
+		}
+	}
+
+	this.create = function(req,res){
+		var auth = jwt.checkToken(req.headers,res);
+		if (auth == false){
+			res.status(400).json({message:"You're not login in :/"});
+		}else{
+			var username = auth.username;
+			var content = req.body.content;
+			var title  = req.body.title;
+			var comment = req.body.comment;
+			Post
+				.create({content:content,title:title,comment:comment,username:username})
+				.then(function(){
+					res.status(200).json({message:"gratz, post created!"});
+				})
+				.catch(function(err){
+					console.log(err);
+				})
+		}
 	}
 }
 
