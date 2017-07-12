@@ -11,12 +11,12 @@ var app = express();
 //var promie = mongoose.connect('mongodb://localhost/studenthack',{
 //	useMongoClinet:true,
 //});
+
 mongoose.connect('mongodb://localhost/studenthack');
 mongoose.Promise = global.Promise;
 
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
-
 
 //user controller
 app.use('/user',require('./routes/user.routes'));

@@ -1,31 +1,32 @@
 <nav class="navbar navbar-toggleable-md navbar-inverse navbar-sh fixed-top">
-  <a class="navbar-brand brand-sh" href="#">StudentHack</a>
-  <ul class="nav navbar-nav mr-auto">
-    <li class="nav-item active">
-      <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#">About</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#">Contact</a>
-    </li>
-  </ul>
-  <ul class="nav navbar-nav navbar-right">
-    <li class="nav-item">
-      <a class="nav-link lgn" href="/post" routerLinkActive="active">Dashboard<span class="caret"></span></a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link lgn" routerLink="/login" routerLinkActive="active">Login <span class="caret"></span></a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link lgn" href="#">Logout <span class="caret"></span></a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link lgn" routerLink="/register" routerLinkActive="active">Register <span class="caret"></span></a>
-    </li>
-  </ul>
+    <a class="navbar-brand brand-sh" href="#">StudentHack</a>
+    <ul class="nav navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">About</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Contact</a>
+      </li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li class="nav-item">
+        <a class="nav-link lgn" href="/post" routerLinkActive="active">Dashboard<span class="caret"></span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link lgn" routerLink="/login" routerLinkActive="active">Login <span class="caret"></span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link lgn" href="#">Logout <span class="caret"></span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link lgn" routerLink="/register" routerLinkActive="active">Register <span class="caret"></span></a>
+      </li>
+    </ul>
 </nav>
 
-<router-outlet></router-outlet>
-
+<div class="container">
+  <router-outlet></router-outlet>
+</div>

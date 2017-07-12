@@ -14,11 +14,12 @@ import { ClassComponent } from './class/class.component';
 import { RegisterComponent } from './register/register.component';
 import { ParentComponent } from './parent/parent.component';
 import { AdminComponent } from './admin/admin.component';
-import { PostComponent } from './post/post.component';
+import { PostsComponent } from './posts/posts.component';
 import { DeadlineComponent } from './deadline/deadline.component';
 import { TaskComponent } from './task/task.component';
+
 import { AuthService } from './_services/auth.service';
-import { PostService } from './_services/post.service';
+import { PostsService } from './_services/posts.service';
 
 
 @NgModule({
@@ -32,7 +33,7 @@ import { PostService } from './_services/post.service';
     RegisterComponent,
     ParentComponent,
     AdminComponent,
-    PostComponent,
+    PostsComponent,
     DeadlineComponent,
     TaskComponent
   ],
@@ -43,7 +44,7 @@ import { PostService } from './_services/post.service';
     NgbModule.forRoot(),
     RouterModule.forRoot([
       { path: 'beranda', component: BerandaComponent },
-      { path: 'post', component: PostComponent },
+      { path: 'post', component: PostsComponent },
       { path: 'deadline', component: DeadlineComponent },
       { path: 'task', component: TaskComponent },
       { path: 'admin', component:AdminComponent },
@@ -56,7 +57,7 @@ import { PostService } from './_services/post.service';
       { path: 'register', component:RegisterComponent }
     ])
   ],
-  providers: [ AuthService, PostService],
+  providers: [ AuthService, PostsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
