@@ -2,7 +2,7 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var jwt	= require('jsonwebtoken');
-
+const path = require('path');
 
 //set up express app
 var app = express();
@@ -11,6 +11,12 @@ var app = express();
 //var promie = mongoose.connect('mongodb://localhost/studenthack',{
 //	useMongoClinet:true,
 //});
+
+app.use(express.static(path.join(__dirname, '../dist')));
+
+app.get('/', (req, res) => {
+  res.sendFile(path.join + 'dist/index.html');
+});
 
 mongoose.connect('mongodb://localhost/studenthack');
 mongoose.Promise = global.Promise;
