@@ -33,6 +33,10 @@ app.use('/teacher',require('./routes/teacher.routes'));
 //post controller
 app.use('/post',require('./routes/post.routes'));
 
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'dist/index.html'));
+});
+
 //listen for request
 app.listen(process.env.port || 4000,function(){
 	console.log('now waiting request');
