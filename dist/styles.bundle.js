@@ -1,6 +1,6 @@
 webpackJsonp([2,4],{
 
-/***/ 168:
+/***/ 167:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
@@ -371,7 +371,7 @@ module.exports = __webpack_require__.p + "fontawesome-webfont.fee66e712a8a08eef5
 /***/ 315:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(168);
+module.exports = __webpack_require__(167);
 
 
 /***/ }),
