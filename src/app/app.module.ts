@@ -17,9 +17,12 @@ import { AdminComponent } from './admin/admin.component';
 import { PostsComponent } from './posts/posts.component';
 import { DeadlineComponent } from './deadline/deadline.component';
 import { TaskComponent } from './task/task.component';
+import { HomeComponent } from './home/home.component';
 
 import { AuthService } from './_services/auth.service';
 import { PostsService } from './_services/posts.service';
+import { ProfilComponent } from './profil/profil.component';
+
 
 
 @NgModule({
@@ -35,7 +38,9 @@ import { PostsService } from './_services/posts.service';
     AdminComponent,
     PostsComponent,
     DeadlineComponent,
-    TaskComponent
+    TaskComponent,
+    ProfilComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -54,7 +59,11 @@ import { PostsService } from './_services/posts.service';
       { path: 'class', component: ClassComponent },
       { path: 'class', component: ClassComponent },
       { path: 'login', component: LoginComponent },
-      { path: 'register', component:RegisterComponent }
+      { path: 'register', component:RegisterComponent },
+      { path: 'profil', component:ProfilComponent },
+      { path: 'posts', component:PostsComponent },
+      { path: '', component:HomeComponent},
+      { path: 'home', component:HomeComponent}
     ])
   ],
   providers: [ AuthService, PostsService],
