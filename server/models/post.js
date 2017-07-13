@@ -10,10 +10,6 @@ var PostSchema = new Schema({
 	username:{
 		type: String
 	},
-	title:{
-		type: String,
-		default:"Title of the post"
-	},
 	comment:[
 	{
 		commenctcontent:{

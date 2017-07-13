@@ -15,24 +15,23 @@ var converter = new Converter({});
 //function User (student,teacher,admin)
 function UserControllers(){
 	this.register = function (data,res){
-		var username = data.body.username;
-		var password = data.body.password;
-		var password_confirm = data.body.password_confirm;
-		var schoolname = data.body.schoolname;
+		var username = data.body.email_school;
+		var password = data.body.password_school;
+		var password_confirm = data.body.password_school;
+		var schoolname = data.body.name_school;
 		if (password != password_confirm){
 			res.status(406).json({message:"password tidak sama"});
 		}else{
-			console.log("ehm")
 			User.create({username:username,password:crypto.createHash('sha256').update(password).digest("hex"),schoolname:schoolname})
 			.then(function(){
-				res.status(200).json({message:"register succes"});
+				console.log("sukses");
+				res.status(200).json({status:true,message:"register succes"});
 			})
 			.catch(function(err){
 				res.status(406).json({message:"register failed"});
 				console.log(err);
 			})
 		}
-		console.log(data.body);
 	}
 
 	this.registerGuru = function (req,res){

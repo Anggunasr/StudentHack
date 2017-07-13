@@ -12,19 +12,8 @@ var Teacher = require('../models/teacher');
 function PostController(){
 	this.getall = function(req,res){
 		Post.find()
+		.sort({$natural:-1})
 		.then(function(result){	
-			var number  = Object.keys(result).length;
-			for (var i=0;i<number;i++){
-				console.log(i);
-				var temp = result[i];
-				User.findById(temp.id,function(err,hasil){
-					if (err){
-						console.log(err);
-					}else{
-						console.log(hasil);
-					}
-				})
-			}
 			res.status(200).json({result});
 		})
 		.catch(function(err){
@@ -82,7 +71,7 @@ function PostController(){
 			var title  = req.body.title;
 			var comment = req.body.comment;
 			Post
-				.create({content:content,title:title,comment:comment,username:username})
+				.create({content:content,comment:comment,username:username})
 				.then(function(){
 					res.status(200).json({message:"gratz, post created!"});
 				})
