@@ -16,7 +16,7 @@ export class DataService{
 	public isLoggedIn = new Subject<boolean>();
 	public baseTitle = 'StudentHack XD >< :/';
 
-	public baseUrl = 'http://localhost:4200';
+	public baseUrl = 'http://localhost:4000';
 
 	/* User */
 	public urlLogin = this.baseUrl+'/api/user/login';

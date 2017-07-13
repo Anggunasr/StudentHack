@@ -22,6 +22,11 @@ import { HomeComponent } from './home/home.component';
 import { AuthService } from './_services/auth.service';
 import { PostsService } from './_services/posts.service';
 import { ProfilComponent } from './profil/profil.component';
+import { ValidateService } from './_services/validate.service'
+import { DataService } from './_services/data.service';
+import { ToastrService } from 'toastr-ng2';
+import {FlashMessagesModule} from 'angular2-flash-messages';
+import {AuthGuard} from './_guards/auth.guard';
 
 
 
@@ -47,6 +52,7 @@ import { ProfilComponent } from './profil/profil.component';
     FormsModule,
     HttpModule,
     NgbModule.forRoot(),
+    FlashMessagesModule,
     RouterModule.forRoot([
       { path: 'beranda', component: BerandaComponent },
       { path: 'post', component: PostsComponent },
@@ -66,7 +72,7 @@ import { ProfilComponent } from './profil/profil.component';
       { path: 'home', component:HomeComponent}
     ])
   ],
-  providers: [ AuthService, PostsService],
+  providers: [ AuthService, PostsService, ValidateService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

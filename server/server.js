@@ -24,6 +24,9 @@ app.use(cors());
 //Set Static path
 app.use(express.static(path.join(__dirname,'dist')));
 
+//Set Static path
+app.use(express.static(path.join(__dirname,'src')));
+
 // Body-Parser
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
@@ -46,7 +49,7 @@ app.use('/post',require('./routes/post.routes'));
 
 app.get('/',(req,res)=>{
 	res.status(400).json({message:"Invaled API"});
-})
+});
 
 
 //Set static folder

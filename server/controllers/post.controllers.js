@@ -14,18 +14,6 @@ function PostController(){
 		Post.find()
 		.sort({$natural:-1})
 		.then(function(result){	
-			var number  = Object.keys(result).length;
-			for (var i=0;i<number;i++){
-				console.log(i);
-				var temp = result[i];
-				User.findById(temp.id,function(err,hasil){
-					if (err){
-						console.log(err);
-					}else{
-						console.log(hasil);
-					}
-				})
-			}
 			res.status(200).json({result});
 		})
 		.catch(function(err){
