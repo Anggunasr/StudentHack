@@ -18,6 +18,7 @@ export class BerandaComponent implements OnInit {
 	loadDash = false;
   processing = false;
   postData;
+  newComment: [];
 
   constructor(
     private formBuilder : FormBuilder,
@@ -36,16 +37,16 @@ export class BerandaComponent implements OnInit {
 
   getAllPosts(){
     this.postsService.getAllPosts().subscribe(data =>{
-      this.postdata = data.posts;
+      this.postData = data.posts;
     })
   }
   plusLike(){
-    this.postService.plusLike.subscribe(data=>{
+    this.postsService.plusLike.subscribe(data=>{
       this.getAllPosts();
     })
   }
 
-  draftComment(){
+  addComment(){
   	
   }
 
