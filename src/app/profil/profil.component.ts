@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+/*import { AuthService } from './_services/auth.service';*/
 
 @Component({
   selector: 'app-profil',
@@ -6,8 +7,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./profil.component.css']
 })
 export class ProfilComponent implements OnInit {
-
-  constructor() { }
+	
+  constructor(
+  	/*private authService : AuthService*/
+  ) { }
 
   ngOnInit() {
   }

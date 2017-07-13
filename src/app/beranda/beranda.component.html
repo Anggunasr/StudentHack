@@ -8,28 +8,27 @@
 
   </div> -->
 
-  <button type="button" name="button" class="btn btn-grn" *ngIf="!newPost" (click)="newPostDash()">
-    <span class="fa fa-plus"></span>&nbsp;&nbsp;Post baru
-  </button>
-  <button [disabled] ="loadDash" type="button" name="button" class="btn btn-blk" *ngIf="!newPost" (click)="ReloadDash()">
+  <button [disabled] ="loadDash" type="button" name="button" class="btn btn-blk" *ngIf="!post" (click)="ReloadDash()">
     <span class="fa fa-refresh"></span>&nbsp;&nbsp; Perbarui
   </button>
 
 <br><br>
 
   <div *ngIf="!newPost">
-    <div class="panel panel-default">
+    <div class="panel panel-default" *ngFor="let post of postData">
       <div class="panel-heading">
-        <h5 class="panel-title"> Username</h5>
+        <h5 class="panel-title">{{post.title}}</h5>
+        {{post.username}}
+        {{post.date | date:'dd MM yyyy'}}
       </div>
       <div class="panel-body">
-        <p> dsdjcvbkcxszcvbjkkl;lkjkhjc </p>
+        {{post.content}}
       </div>
       <!-- footer start -->
       <div class="panel-footer">
-        <div class="dropdown">
-          <button type="button" name="button" class="btn btn-sm btn-blk">
-            <span class="fa fa-thumbs-up">&nbsp;&nbsp;</span>21
+        <div>
+          <button type="button" name="button" class="btn btn-sm btn-blk" (click)="plusLike()">
+            <span class="fa fa-thumbs-up">&nbsp;&nbsp;</span>{{post.plusLike}}
           </button>
           <button type="button" name="button" class="btn btn-sm btn-blk" (click)="draftComment()">
           <span class="fa fa-comments">&nbsp;&nbsp;</span>2</button>

@@ -6,19 +6,19 @@
       </li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
-      <li class="nav-item" [routerLinkActive]="[active]" [routerLinkActiveOptions]="{exact:true}">
+      <li class="nav-item" *ngIf="authService.loggedIn()" [routerLinkActive]="[active]" [routerLinkActiveOptions]="{exact:true}">
         <a class="nav-link lgn" routerLink="/beranda" routerLinkActive ="active">Beranda<span class="caret"></span></a>
       </li>
-      <li class="nav-item" [routerLinkActive]="[active]" [routerLinkActiveOptions]="{exact:true}">
+      <li class="nav-item" *ngIf="authService.loggedIn()" [routerLinkActive]="[active]" [routerLinkActiveOptions]="{exact:true}">
         <a class="nav-link lgn" routerLink="/profil" routerLinkActive ="active">Profil <span class="caret"></span></a>
       </li>
-      <li class="nav-item" [routerLinkActive]="[active]" [routerLinkActiveOptions]="{exact:true}">
+      <li class="nav-item" *ngIf="!authService.loggedIn()" [routerLinkActive]="[active]" [routerLinkActiveOptions]="{exact:true}">
         <a class="nav-link lgn" routerLink="/login" routerLinkActive ="active">Login <span class="caret"></span></a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item" *ngIf="authService.loggedIn()">
         <a class="nav-link lgn" href="#">Logout <span class="caret"></span></a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item" *ngIf="!authService.loggedIn()">
         <a class="nav-link lgn" [routerLink]="['/register']" routerLinkActive ="active">Register <span class="caret"></span></a>
       </li>
     </ul>
