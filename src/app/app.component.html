@@ -1,32 +1,29 @@
 <nav class="navbar navbar-toggleable-md navbar-inverse navbar-sh fixed-top">
-    <a class="navbar-brand brand-sh" href="#">StudentHack</a>
+    <a class="navbar-brand brand-sh" href='/home'>StudentHack</a>
     <ul class="nav navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-      </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">About</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Contact</a>
+        <a class="nav-link lgn" [routerLink]="['/home']" routerLinkActive ="active">Home<span class="caret"></span></a>
       </li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
-      <li class="nav-item">
-        <a class="nav-link lgn" href="/post" routerLinkActive="active">Dashboard<span class="caret"></span></a>
+      <li class="nav-item" [routerLinkActive]="[active]" [routerLinkActiveOptions]="{exact:true}">
+        <a class="nav-link lgn" routerLink="/beranda" routerLinkActive ="active">Beranda<span class="caret"></span></a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link lgn" routerLink="/login" routerLinkActive="active">Login <span class="caret"></span></a>
+      <li class="nav-item" [routerLinkActive]="[active]" [routerLinkActiveOptions]="{exact:true}">
+        <a class="nav-link lgn" routerLink="/profil" routerLinkActive ="active">Profil <span class="caret"></span></a>
+      </li>
+      <li class="nav-item" [routerLinkActive]="[active]" [routerLinkActiveOptions]="{exact:true}">
+        <a class="nav-link lgn" routerLink="/login" routerLinkActive ="active">Login <span class="caret"></span></a>
       </li>
       <li class="nav-item">
         <a class="nav-link lgn" href="#">Logout <span class="caret"></span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link lgn" routerLink="/register" routerLinkActive="active">Register <span class="caret"></span></a>
+        <a class="nav-link lgn" [routerLink]="['/register']" routerLinkActive ="active">Register <span class="caret"></span></a>
       </li>
     </ul>
 </nav>
 
-<div class="container">
+<div style="margin-top: 15vh;">
   <router-outlet></router-outlet>
 </div>

@@ -1,0 +1,21 @@
+.ct-lgn{
+  margin-top:15vh;
+}
+
+.btn-home{
+	background-color: #1a0315;
+	color: white;
+	text-decoration: none;
+}
+
+.btn-home:hover{
+	background-color: #88d317;
+	color: #1a0315;
+	text-decoration: none;
+}
+
+.bgd-home{
+	background-color: #fff;
+	padding-top: 30vh;
+	padding-bottom: 29vh;
+}
