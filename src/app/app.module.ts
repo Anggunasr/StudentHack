@@ -14,8 +14,6 @@ import { ClassComponent } from './class/class.component';
 import { RegisterComponent } from './register/register.component';
 import { ParentComponent } from './parent/parent.component';
 import { AdminComponent } from './admin/admin.component';
-import { PostsComponent } from './posts/posts.component';
-import { DeadlineComponent } from './deadline/deadline.component';
 import { TaskComponent } from './task/task.component';
 import { HomeComponent } from './home/home.component';
 
@@ -41,8 +39,6 @@ import {AuthGuard} from './_guards/auth.guard';
     RegisterComponent,
     ParentComponent,
     AdminComponent,
-    PostsComponent,
-    DeadlineComponent,
     TaskComponent,
     ProfilComponent,
     HomeComponent
@@ -54,20 +50,16 @@ import {AuthGuard} from './_guards/auth.guard';
     NgbModule.forRoot(),
     FlashMessagesModule,
     RouterModule.forRoot([
-      { path: 'beranda', component: BerandaComponent },
-      { path: 'post', component: PostsComponent },
-      { path: 'deadline', component: DeadlineComponent },
+      { path: 'beranda', component: BerandaComponent, canActive: [AuthGuard] },
       { path: 'task', component: TaskComponent },
-      { path: 'admin', component:AdminComponent },
+      { path: 'admin', component:AdminComponent, canActive: [AuthGuard] },
       { path: 'teacher', component: TeacherComponent },
       { path: 'student', component: StudentComponent },
       { path: 'parent', component: ParentComponent },
       { path: 'class', component: ClassComponent },
-      { path: 'class', component: ClassComponent },
       { path: 'login', component: LoginComponent },
       { path: 'register', component:RegisterComponent },
-      { path: 'profil', component:ProfilComponent },
-      { path: 'posts', component:PostsComponent },
+      { path: 'profil', component:ProfilComponent, canActive: [AuthGuard] },
       { path: '', component:HomeComponent},
       { path: 'home', component:HomeComponent}
     ])

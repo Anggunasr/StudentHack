@@ -2,7 +2,9 @@
   <h1><strong>StudentHack</strong></h1>
   <p class="lead">Selamat datang di StudentHack</p>
   <div>
-    <a class="btn btn-home" [routerLink]="['/register']">Register</a> <a class="btn btn-home" [routerLink]="['/login']">Login</a>
+    <a class="btn btn-home" *ngIf="!authService.loggedIn()" [routerLink]="['/register']">Register</a>
+    <a class="btn btn-home" *ngIf="!authService.loggedIn()" [routerLink]="['/login']">Login</a>
+    <a class="btn btn-home" *ngIf="authService.loggedIn()" [routerLink]="['/beranda']">Beranda</a>
   </div>
 </div>
 
