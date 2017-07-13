@@ -1,3 +1,59 @@
-<p>
-  student works!
-</p>
+<div class="container ct-lgn">
+  <h2>Tambah Siswa</h2>
+  <br>
+  <form (Submit)= "onStudentSubmit()">
+    
+    <div class="form-group">
+      <label class="control-label col-sm-10" for="name_student"><strong>Nama</strong></label>
+      <div class="col-sm-10">
+        <input type="text" name="name_student" class="form-control" placeholder="Nama Siswa" ngModel required="Nama harus diisi">
+      </div>
+      </div>
+    <div class="form-group">
+      <label class="control-label col-sm-10" for="email_student"><strong>Email</strong></label>
+      <div class="col-sm-10">
+        <input type="email" name="email_student" class="form-control" placeholder="Email" ngModel required="Email harus diisi">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-10" for="handphone_student"><strong>No. HP</strong></label>
+      <div class="col-sm-10">
+        <input type="text" name="handphone_student" class="form-control" placeholder="No. HP" ngModel required="No. HP harus diisi">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-10" for="class_student"><strong>Kelas</strong></label>
+      <div class="col-sm-10">
+        <input type="text" name="class_student" class="form-control" placeholder="Kelas" ngModel required="Kelas harus diisi">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-10" for="gender_student"><strong>Jenis Kelamin</strong></label>
+      <div class="col-sm-10">
+        <input type="text" name="gender_student" class="form-control" placeholder="Jenis Kelamin" ngModel required="Jenis kelamin harus diisi">
+      </div>
+    </div>
+       <div class="form-group">
+      <label class="control-label col-sm-10" for="birthday_student"><strong>Tanggal Lahir</strong></label>
+      <div class="col-sm-10">
+        <input type="date" name="birthday_student" class="form-control" placeholder="Tanggal lahir harus diisi" ngModel required>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-10" for="address_student"><strong>Alamat</strong></label>
+      <div class="col-sm-10">
+        <input type="text" name="address_student" class="form-control" placeholder="Alamat" ngModel required="Alamat harus diisi">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-10" for="password_student"><strong>Password</strong></label>
+      <div class="col-sm-10">
+        <input type="password" name="password_student" class="form-control" placeholder="Password" ngModel required="Password harus diisi">
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-sm-offset-2 col-sm-10">
+        <button type="submit" class="btn btn-default btn-sh">Tambah Siswa</button>
+      </div>
+    </div>
+  </form>

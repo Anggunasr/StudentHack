@@ -1,3 +1,46 @@
-<p>
-  parent works!
-</p>
+<div class="container ct-lgn">
+  <h2>Tambah Orangtua</h2>
+  <br>
+  <form (Submit)= "onParentSubmit()">
+    <div class="form-group">
+      <label class="control-label col-sm-10" for="name_parent"><strong>Nama</strong></label>
+      <div class="col-sm-10">
+        <input type="text" name="name_parent" class="form-control" placeholder="Nama Orangtua" ngModel required="Nama harus diisi">
+      </div>
+      </div>
+      <div class="form-group">
+      <label class="control-label col-sm-10" for="student_parent"><strong>Nama Anak</strong></label>
+      <div class="col-sm-10">
+        <input type="text" name="student_parent" class="form-control" placeholder="Nama Anak" ngModel required="Nama harus diisi">
+      </div>
+      </div>
+    <div class="form-group">
+      <label class="control-label col-sm-10" for="email_parent"><strong>Email</strong></label>
+      <div class="col-sm-10">
+        <input type="email" name="email_parent" class="form-control" placeholder="Email" ngModel required="Email harus diisi">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-10" for="handphone_parent"><strong>No. HP</strong></label>
+      <div class="col-sm-10">
+        <input type="text" name="handphone_parent" class="form-control" placeholder="No. HP" ngModel required="No. HP harus diisi">
+      </div>
+    </div>
+        <div class="form-group">
+      <label class="control-label col-sm-10" for="address_parent"><strong>Alamat</strong></label>
+      <div class="col-sm-10">
+        <input type="text" name="address_parent" class="form-control" placeholder="Alamat" ngModel required="Alamat harus diisi">
+      </div>
+    </div>
+           <div class="form-group">
+      <label class="control-label col-sm-10" for="password_parent"><strong>Password</strong></label>
+      <div class="col-sm-10">
+        <input type="password" name="password_parent" class="form-control" placeholder="Password" ngModel required="Password harus diisi">
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-sm-offset-2 col-sm-10">
+        <button type="submit" class="btn btn-default btn-sh">Tambah Orangtua </button>
+      </div>
+    </div>
+  </form>
