@@ -1,4 +1,24 @@
-<p>
-  class works!
-</p>
-<router-outlet></router-outlet>
+<div class="container ct-lgn">
+  <h2>Tambah Kelas</h2>
+  <br>
+  <form (Submit)= "onClassSubmit()">
+    
+    <div class="form-group">
+      <label class="control-label col-sm-10" for="nama"><strong>Nama</strong></label>
+      <div class="col-sm-10">
+        <input type="text" [(ngModel)]="name_class" name="name_class" class="form-control" placeholder="Nama Kelas" ngModel required="Nama harus diisi">
+      </div>
+      </div>
+      <div class="form-group">
+      <label class="control-label col-sm-10" for="walikelas"><strong>Wali Kelas</strong></label>
+      <div class="col-sm-10">
+        <input type="text" [(ngModel)]="walikelas" name="walikelas" class="form-control" placeholder="Wali Kelas" ngModel required="Wali Kelas harus diisi">
+      </div>
+      </div>
+   
+    <div class="form-group">
+      <div class="col-sm-offset-2 col-sm-10">
+        <button type="submit" class="btn btn-default btn-sh" [disabled]="!name_class || !walikelas">Tambah Kelas</button>
+      </div>
+    </div>
+  </form>
