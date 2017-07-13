@@ -42,6 +42,17 @@ export class StudentComponent implements OnInit {
 	address_student: this.address_student,
 	password_student: this.password_student,
 }
+// Register userguru
+    this.authService.registerStudent(student).subscribe(data => {
+      console.log(data);
+      if(data.status==true){
+      //  this.flashMessage.show('Succes to register a student', {cssClass: 'alert-success', timeout: 3000});
+        this.router.navigate(['/student']);
+      } else {
+      //  this.flashMessage.show('Something went wrong');
+        this.router.navigate(['/student']);
+      }
+    });
 
 
 }
