@@ -1,0 +1,53 @@
+<div class="dash-body">  
+  <h1 class="page-header"> Beranda </h1>
+
+  <!-- <div class="row show-hide-message">
+    <div[ngClass]="messageClass">
+      {{ message }}
+    </div>
+
+  </div> -->
+
+  <button type="button" name="button" class="btn btn-grn" *ngIf="!newPost" (click)="newPostDash()">
+    <span class="fa fa-plus"></span>&nbsp;&nbsp;Post baru
+  </button>
+  <button [disabled] ="loadDash" type="button" name="button" class="btn btn-blk" *ngIf="!newPost" (click)="ReloadDash()">
+    <span class="fa fa-refresh"></span>&nbsp;&nbsp; Perbarui
+  </button>
+
+<br><br>
+
+  <div *ngIf="!newPost">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h5 class="panel-title"> Username</h5>
+      </div>
+      <div class="panel-body">
+        <p> dsdjcvbkcxszcvbjkkl;lkjkhjc </p>
+      </div>
+      <!-- footer start -->
+      <div class="panel-footer">
+        <div class="dropdown">
+          <button type="button" name="button" class="btn btn-sm btn-blk">
+            <span class="fa fa-thumbs-up">&nbsp;&nbsp;</span>21
+          </button>
+          <button type="button" name="button" class="btn btn-sm btn-blk" (click)="draftComment()">
+          <span class="fa fa-comments">&nbsp;&nbsp;</span>2</button>
+        </div>
+      </div>
+      <!-- footer end-->
+
+      <ul class="list-group">
+        <li class="list-group-item">
+          
+          <!-- <form>
+            <textarea name="comment" rows="10" cols="30" class="form-control"></textarea>
+            <button type="button" name="button" class="btn btn-sm btn-grn"><strong>Tambah komentar</strong></button>
+            <button type="button" name="button" class="btn btn-sm btn-blk"> Batal </button>
+          </form> -->
+        </li>
+      </ul>
+
+    </div>
+  </div>
+</div>
