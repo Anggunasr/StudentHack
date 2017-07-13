@@ -8,7 +8,7 @@ export class AuthService {
   authToken: any;
   user: any;
   isDev:boolean;
-  url:"localhost:4000/user/register";
+  url:"http://localhost:4000";
 
   constructor(private http:Http) {
     this.isDev = true; // Change to false before deployment
@@ -17,15 +17,28 @@ export class AuthService {
   registerUser(user){
     let headers = new Headers();
     headers.append('Content-Type','application/json');
-    return this.http.post('http://localhost:4000/user/register', user,{headers: headers})
+    return this.http.post(this.url+'/user/register', user,{headers: headers})
       .map(res => res.json());
+  }
+  
+  registerStudent(user){
+    let headers = new Headers();
+    headers.append('Content-Type','application/json');
+    return this.http.post(this.url+'/user/registerstudent',user,{headers:headers})
+      .map(res=> res.json());
+  }
+
+  registerTeacher(user){
+    let headers = new Headers();
+    headers.append('Content-Type','application/json');
+    return this.http.post(this.url+'/user/registerteacher',user,{headers:headers})
+      .map(res=> res.json());
   }
 
   authenticateUser(user){
     let headers = new Headers();
     headers.append('Content-Type','application/json');
-    let ep = this.prepEndpoint('/user/authenticate');
-    return this.http.post(ep, user,{headers: headers})
+    return this.http.post(this.url+'/user/login', user,{headers: headers})
       .map(res => res.json());
   }
 

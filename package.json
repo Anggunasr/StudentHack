@@ -23,6 +23,7 @@
     "@angular/platform-browser-dynamic": "^4.0.0",
     "@angular/router": "^4.0.0",
     "@ng-bootstrap/ng-bootstrap": "^1.0.0-alpha.26",
+    "angular-flash-message": "^3.3.3",
     "angular2-flash-messages": "^1.0.8",
     "angular2-jwt": "^0.2.3",
     "axios": "^0.16.2",

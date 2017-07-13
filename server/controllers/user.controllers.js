@@ -41,16 +41,16 @@ function UserControllers(){
 		}
 		if (auth.login_type==3){
 			console.log(req.body)
-			var username = req.body.email;
-			var name = req.body.name;
-			var password = req.body.password;
-			var password_confirm = req.body.password_confirm;
-			var gender = req.body.gender;
+			var username = req.body.email_teacher;
+			var name = req.body.name_teacher;
+			var password = req.body.password_teacher;
+			var password_confirm = req.body.password_teacher;
+			var gender = req.body.gender_teacher;
 			var subject = req.body.subject;
-			var handphone = req.body.handphone;
-			var address = req.body.address;
-			var email = req.body.email;
-			var birthday = req.body.birthday;
+			var handphone = req.body.handphone_teacher;
+			var address = req.body.address_teacher;
+			var email = req.body.email_teacher;
+			var birthday = req.body.birthday_teacher;
 			var schoolname = auth.schoolname;
 			var status_user = true;
 			var homeroom = req.body.homeroom;
@@ -83,14 +83,14 @@ function UserControllers(){
 			return res.status(406).json({message:"Authitentication Failed, please login"});
 		}
 		if (auth.login_type==3){
-			var username = data.body.email;
-			var name = data.body.name;
-			var password = data.body.password;
-			var password_confirm = data.body.password_confirm;
-			var gender = data.body.gender;
-			var handphone = data.body.handphone;
-			var address = data.body.address;
-			var email = data.body.email;
+			var username = data.body.email_student;
+			var name = data.body.name_student;
+			var password = data.body.password_student;
+			var password_confirm = data.body.password_student;
+			var gender = data.body.gender_student;
+			var handphone = data.body.handphone_student;
+			var address = data.body.address_student;
+			var email = data.body.email_student;
 			var status_user = true;
 			var login_type = 2;
 			var class_id = data.body.classid;

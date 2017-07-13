@@ -12,7 +12,7 @@ function ClassController(){
 			return res.status(406).json({message:"Authitentication Failed, please login"});
 		}
 		if (auth.login_type==3){
-			var name = data.body.name;
+			var name = data.body.name_class;
 			var walikelas = data.body.walikelas;
 			var sr = auth.id;
 			Class
