@@ -5,7 +5,8 @@ const jwt	= require('jsonwebtoken');
 const path = require('path');
 const cors = require('cors');
 const port = 4000;
-const database = 'mongodb://localhost/studenthack';
+//const database = 'mongodb://localhost/studenthack';
+const database = 'mongodb://admin:admin123@ds151661.mlab.com:51661/studenthack'
 
 //connect to mongodb
 mongoose.connect(database);
