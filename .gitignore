@@ -5,4 +5,4 @@
 *.ali
 
 #ignore node_modules in api
-/api/node_modules/
+/server/node_modules/

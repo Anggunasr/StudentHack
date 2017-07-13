@@ -1,29 +1,34 @@
-var express = require('express');
-var bodyParser = require('body-parser');
-var mongoose = require('mongoose');
-var jwt	= require('jsonwebtoken');
+const express = require('express');
+const bodyParser = require('body-parser');
+const mongoose = require('mongoose');
+const jwt	= require('jsonwebtoken');
 const path = require('path');
-
-//set up express app
-var app = express();
+const cors = require('cors');
+const port = 4000;
+const database = 'mongodb://localhost/studenthack';
 
 //connect to mongodb
-//var promie = mongoose.connect('mongodb://localhost/studenthack',{
-//	useMongoClinet:true,
-//});
-
-app.use(express.static(path.join(__dirname, '../dist')));
-
-app.get('/', (req, res) => {
-  res.sendFile(path.join + 'dist/index.html');
-});
-
-mongoose.connect('mongodb://localhost/studenthack');
+mongoose.connect(database);
 mongoose.Promise = global.Promise;
 
+mongoose.connection.on('connected',()=>{
+	console.log("connected to database at "+database);
+});
+
+//set up express app
+const app = express();
+
+//cors middleware
+app.use(cors());
+
+//Set Static path
+app.use(express.static(path.join(__dirname,'dist')));
+
+// Body-Parser
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
 
+//routes for models
 //user controller
 app.use('/user',require('./routes/user.routes'));
 
@@ -39,11 +44,17 @@ app.use('/teacher',require('./routes/teacher.routes'));
 //post controller
 app.use('/post',require('./routes/post.routes'));
 
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'dist/index.html'));
-});
+app.get('/',(req,res)=>{
+	res.status(400).json({message:"Invaled API"});
+})
+
+
+//Set static folder
+//app.use(express.static(path.join(__dirname, '../dist')));
+
+
 
 //listen for request
-app.listen(process.env.port || 4000,function(){
-	console.log('now waiting request');
-});
+app.listen(port,()=>{
+	console.log("server started at "+port);
+})
