@@ -17,7 +17,16 @@ export class PostsService {
 
   //like
   plusLike() {
-    return this.http.get('/api/plusLike')
+    return this.http.post('/api/plusLike')
       .map(res => res.json());
   }
+  
+/*  addComment(username,commentcontent){
+  	const postData = {
+  		username=username,
+  		commentcontent = commentcontent
+  	}
+  	return this.http.post('/api/getallpost', postData)
+      .map(res => res.json());
+  }*/
 }

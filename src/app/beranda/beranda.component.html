@@ -30,22 +30,23 @@
           <button type="button" name="button" class="btn btn-sm btn-blk" (click)="plusLike()">
             <span class="fa fa-thumbs-up">&nbsp;&nbsp;</span>{{post.plusLike}}
           </button>
-          <button type="button" name="button" class="btn btn-sm btn-blk" (click)="draftComment()">
-          <span class="fa fa-comments">&nbsp;&nbsp;</span>2</button>
+          <!-- <button type="button" name="button" class="btn btn-sm btn-blk" (click)="draftComment()">
+          <span class="fa fa-comments">&nbsp;&nbsp;</span>2</button> -->
         </div>
       </div>
       <!-- footer end-->
 
-      <ul class="list-group">
+ <!--      <ul class="list-group">
         <li class="list-group-item">
-          
-          <!-- <form>
+          <div *ngIf="newComment.indexOf(post.idpost)> -1">
+          <form>
             <textarea name="comment" rows="10" cols="30" class="form-control"></textarea>
             <button type="button" name="button" class="btn btn-sm btn-grn"><strong>Tambah komentar</strong></button>
             <button type="button" name="button" class="btn btn-sm btn-blk"> Batal </button>
-          </form> -->
+          </form>
+          </div>
         </li>
-      </ul>
+      </ul> -->
 
     </div>
   </div>
