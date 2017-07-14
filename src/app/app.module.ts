@@ -50,9 +50,9 @@ import {AuthGuard} from './_guards/auth.guard';
     NgbModule.forRoot(),
     FlashMessagesModule,
     RouterModule.forRoot([
-      { path: 'beranda', component: BerandaComponent, canActive: [AuthGuard] },
+      { path: 'beranda', component: BerandaComponent},
       { path: 'task', component: TaskComponent },
-      { path: 'admin', component:AdminComponent, canActive: [AuthGuard] },
+      { path: 'admin', component:AdminComponent},
       { path: 'teacher', component: TeacherComponent },
       { path: 'student', component: StudentComponent },
       { path: 'parent', component: ParentComponent },

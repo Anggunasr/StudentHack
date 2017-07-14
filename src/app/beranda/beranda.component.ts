@@ -18,7 +18,7 @@ export class BerandaComponent implements OnInit {
 	loadDash = false;
   processing = false;
   postData;
-  newComment: [];
+  /*newComment: [];*/
 
   constructor(
     private formBuilder : FormBuilder,
@@ -40,23 +40,24 @@ export class BerandaComponent implements OnInit {
       this.postData = data.posts;
     })
   }
+  
   plusLike(){
     this.postsService.plusLike.subscribe(data=>{
       this.getAllPosts();
     })
   }
 
-  addComment(){
+ /* addComment(){
   	
-  }
+  }*/
 
-  cancel(){
+ /* cancel(){
     window.location.reload();
   }
 
   submitted(){
     this.processing = true;
-  }
+  }*/
 
   ngOnInit() {
     this.authService.getProfile().subscribe(profile =>{
