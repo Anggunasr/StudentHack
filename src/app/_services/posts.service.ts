@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Http } from '@angular/http';
+import { Http, Headers } from '@angular/http';
 import { AuthService } from './auth.service';
 
 import 'rxjs/add/operator/map';
@@ -7,26 +7,20 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class PostsService {
 
-  constructor(private http: Http) { }
+   url:"http://localhost:4000";
+   constructor(private http:Http) {  }
 
-  // Get all posts from the API
-  getAllPosts() {
-    return this.http.get('/api/getallpost')
+  getAllPosts(){
+    let headers = new Headers();
+    headers.append('Content-Type','application/json');
+    return this.http.post('http://localhost:4000/post/getallpost', {headers: headers})
       .map(res => res.json());
   }
 
-  //like
-  plusLike() {
-    return this.http.post('/api/plusLike')
+  plusLike(_id){
+  let headers = new Headers();
+  headers.append('Content-Type','application/json');
+  return this.http.post(this.url+'/post/plusLike', _id,{headers: headers})
       .map(res => res.json());
   }
-  
-/*  addComment(username,commentcontent){
-  	const postData = {
-  		username=username,
-  		commentcontent = commentcontent
-  	}
-  	return this.http.post('/api/getallpost', postData)
-      .map(res => res.json());
-  }*/
 }

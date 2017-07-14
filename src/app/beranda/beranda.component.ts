@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, FormBuilder} from '@angular/forms';
-import { AuthService } from './_services/auth.service';
-import { PostsService } from './_services/posts.service';
+import { AuthService } from '../_services/auth.service';
+import { PostsService } from '../_services/posts.service';
 
 
 @Component({
@@ -11,17 +10,16 @@ import { PostsService } from './_services/posts.service';
 })
 export class BerandaComponent implements OnInit {
 
-	messageClass;
-	message;
+  messageClass;
+  message;
   username;
   post: false;
-	loadDash = false;
+  loadDash = false;
   processing = false;
   postData;
   /*newComment: [];*/
 
   constructor(
-    private formBuilder : FormBuilder,
     private authService : AuthService,
     private postsService : PostsService
   ) { }
@@ -41,8 +39,8 @@ export class BerandaComponent implements OnInit {
     })
   }
   
-  plusLike(){
-    this.postsService.plusLike.subscribe(data=>{
+  plusLike(_id){
+    this.postsService.plusLike(_id).subscribe(data=>{
       this.getAllPosts();
     })
   }

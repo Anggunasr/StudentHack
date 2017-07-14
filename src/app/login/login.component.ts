@@ -9,13 +9,13 @@ import {FlashMessagesService} from 'angular2-flash-messages';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  email_school: String;
-  password_school: String;
+  username: String;
+  password: String;
 
   constructor(
     private authService:AuthService,
     private flashMessage:FlashMessagesService,
-    private router:Router,
+    private router:Router
   ) { }
 
   ngOnInit() {
@@ -23,18 +23,19 @@ export class LoginComponent implements OnInit {
 
   onLoginSubmit(){
     const user = {
-      email_school: this.email_school,
-      password_school: this.password_school
+      username: this.username,
+      password: this.password
     }
-
+   
     this.authService.authenticateUser(user).subscribe(data => {
-      if(data.success){
+      if(data.succes){
         localStorage.setItem('token', data.token);
-        this.flashMessage.show('Login Succes', {cssClass: 'alert-success', timeout: 3000});
+       // this.flashMessage.show('Login Succes', {cssClass: 'alert-success', timeout: 3000});
         if (data.type == 3){
-           this.router.navigate(['/teacher']);
+           this.router.navigate(['/student']);
         }else{
-           this.router.navigate(['/beranda']);
+         // this.flashMessage.show('still failed:/', {cssClass: 'alert-danger', timeout: 3000});
+
         }
       }else{
           this.router.navigate(['/login']);

@@ -34,7 +34,7 @@ export class StudentComponent implements OnInit {
   onStudentSubmit(){
     const student = {
 
-    name_student: this.name_student,
+  name_student: this.name_student,
 	email_student: this.email_student,
 	handphone_student: this.handphone_student,
 	gender_student: this.gender_student,

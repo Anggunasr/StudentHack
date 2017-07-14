@@ -7,7 +7,6 @@ import { NgbModule }        from '@ng-bootstrap/ng-bootstrap';
 
 import { AppComponent }     from './app.component';
 import { LoginComponent }   from './login/login.component';
-import { BerandaComponent } from './beranda/beranda.component';
 import { TeacherComponent } from './teacher/teacher.component';
 import { StudentComponent } from './student/student.component';
 import { ClassComponent } from './class/class.component';
@@ -24,7 +23,8 @@ import { ValidateService } from './_services/validate.service'
 import { DataService } from './_services/data.service';
 import { ToastrService } from 'toastr-ng2';
 import {FlashMessagesModule} from 'angular2-flash-messages';
-import {AuthGuard} from '/_guards/auth.guard';
+import {AuthGuard} from './_guards/auth.guard';
+import { BerandaComponent } from './beranda/beranda.component';
 
 
 
@@ -32,7 +32,6 @@ import {AuthGuard} from '/_guards/auth.guard';
   declarations: [
     AppComponent,
     LoginComponent,
-    BerandaComponent,
     TeacherComponent,
     StudentComponent,
     ClassComponent,
@@ -41,7 +40,8 @@ import {AuthGuard} from '/_guards/auth.guard';
     AdminComponent,
     TaskComponent,
     ProfilComponent,
-    HomeComponent
+    HomeComponent,
+    BerandaComponent
   ],
   imports: [
     BrowserModule,
@@ -59,12 +59,12 @@ import {AuthGuard} from '/_guards/auth.guard';
       { path: 'class', component: ClassComponent },
       { path: 'login', component: LoginComponent },
       { path: 'register', component:RegisterComponent },
-      { path: 'profil', component:ProfilComponent, canActive: [AuthGuard] },
+      { path: 'profil', component:ProfilComponent },
       { path: '', component:HomeComponent},
       { path: 'home', component:HomeComponent}
     ])
   ],
-  providers: [ AuthService, PostsService, ValidateService],
+  providers: [ AuthService, PostsService, ValidateService,DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -3,43 +3,50 @@ import {Http, Headers} from '@angular/http';
 import 'rxjs/add/operator/map';
 import {tokenNotExpired} from 'angular2-jwt';
 
+
 @Injectable()
 export class AuthService {
   authToken: any;
   user: any;
   isDev:boolean;
-  url:"http://localhost:4000";
+  UrlKu:"http://localhost:4000";
+
 
   constructor(private http:Http) {
     this.isDev = true; // Change to false before deployment
+
   }
 
   registerUser(user){
     let headers = new Headers();
     headers.append('Content-Type','application/json');
-    return this.http.post(this.url+'/user/register', user,{headers: headers})
+    return this.http.post('http://localhost:4000/user/register', user,{headers: headers})
       .map(res => res.json());
   }
-  
-  registerStudent(user){
+
+  registerStudent(user){ 
     let headers = new Headers();
     headers.append('Content-Type','application/json');
-    return this.http.post(this.url+'/user/registerstudent',user,{headers:headers})
+    return this.http.post('http://localhost:4000/user/registerstudent',user,{headers:headers})
       .map(res=> res.json());
   }
 
   registerTeacher(user){
     let headers = new Headers();
     headers.append('Content-Type','application/json');
-    return this.http.post(this.url+'/user/registerteacher',user,{headers:headers})
+    return this.http.post(this.UrlKu+'/user/registerteacher',user,{headers:headers})
       .map(res=> res.json());
   }
 
   authenticateUser(user){
     let headers = new Headers();
     headers.append('Content-Type','application/json');
-    return this.http.post(this.url+'/user/login', user,{headers: headers})
-      .map(res => res.json());
+    return this.http.post('http://localhost:4000/user/login', user,{headers: headers})
+      .map(res => {
+          let user = res.json();
+          console.log(user);
+          return user;
+      });
   }
 
   getProfile(){

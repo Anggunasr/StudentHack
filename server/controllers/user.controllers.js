@@ -102,7 +102,7 @@ function UserControllers(){
 				User.create({username: username,password:crypto.createHash('sha256').update(password).digest("hex"),login_type:login_type,status_user:status_user,schoolname:schoolname}).then(function(){
 					console.log("Regis User complete");
 					Student.create({username:username,name:name,gender:gender,handphone:handphone,address:address,email:email,sr:sr,class_id:class_id}).then(function(){
-						res.status(200).json({message:"register selesai"});
+						res.json({status:true,message:"register selesai"});
 					}).catch(function(err){
 						res.status(400).json({message:"register gagal mblo"});
 						console.log(err);		
@@ -111,7 +111,7 @@ function UserControllers(){
 					res.status(400).json({message:"register gagal"});
 					console.log(err);
 				})
-			}
+			} 
 		}else{
 			return res.status(406).json({message:"You're not School Regulator! :/"});
 		}
@@ -142,6 +142,7 @@ function UserControllers(){
 				"exp" : expired				
 			}
 			var token = jwt.createToken(data_token);
+			console.log("aye, login bisa mas :')",token);
 			res.json({
 				status:200,
 				succes:true,
