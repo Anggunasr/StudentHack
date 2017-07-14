@@ -24,7 +24,7 @@ import { ValidateService } from './_services/validate.service'
 import { DataService } from './_services/data.service';
 import { ToastrService } from 'toastr-ng2';
 import {FlashMessagesModule} from 'angular2-flash-messages';
-import {AuthGuard} from './_guards/auth.guard';
+import {AuthGuard} from '/_guards/auth.guard';
 
 
 

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
-import { AuthService } from './_services/auth.service';
+import { AuthService } from './auth.service';
 
 import 'rxjs/add/operator/map';
 
@@ -20,5 +20,4 @@ export class PostsService {
     return this.http.get('/api/plusLike')
       .map(res => res.json());
   }
-}
 }
